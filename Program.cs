@@ -5,7 +5,7 @@ namespace Plocha
     class Program
     {
         static int precSelector = 0; // select 0 - 2
-        static int[] precSelection = { 100, 1000, 10000 };
+        static int[] precSelection = { 100, 1000, 10000 }; //presnost vypoctu
         static double[] divSizes = new double[precSelection[precSelector]];
 
         static void Main(string[] args)
@@ -26,7 +26,7 @@ namespace Plocha
         }
     }
 
-    public class Division
+    public class Division // metoda obdelniku
     {
         const int lengthX = 2;
         static double divX, currX;
@@ -46,7 +46,7 @@ namespace Plocha
 
     }
 
-    public class MonteCarlo
+    public class MonteCarlo // metoda Monte Carlo
     {
         Random rng = new Random();
 
@@ -61,7 +61,7 @@ namespace Plocha
             guessList = new Guess[guessesToTake];
         }
 
-        public double MCResult()
+        public double MCResult() // Funkce pro vypocet a navraceni hodnoty Monte Carlo
         {
             int goodGuess = 0, badGuess = 0;
             for (int i = 0; i < guessesToTake; i++)
@@ -81,7 +81,7 @@ namespace Plocha
         }
     }
 
-    public class Guess
+    public class Guess // Definice "vystrelu" pro metodu Monte Carlo
     {
         public double posX, posY;
         public bool inFunction;
